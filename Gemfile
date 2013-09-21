@@ -10,7 +10,10 @@ gem 'friendly_id',  "~> 4.0.10.1"
 gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'pg'
+group :production do
+  gem 'pg'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
