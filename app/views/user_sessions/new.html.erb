@@ -1,0 +1,34 @@
+
+<h1><%= t('.title') %></h1>
+
+<div class="well">
+<%= form_for @session, html: {class: 'form-horizontal'} do |f| %>
+	<% if @session.errors.has_key? :base %>
+	  <div class="alert alert-danger">
+	    <%= @session.errors[:base].join(', ') %>
+	  </div>
+	<% end %>
+	        
+	
+	<div class="form-group">
+		<%= f.label :email, class: "col-lg-2 control-label" %>
+	  <div class="col-lg-5">
+	  	<%= f.text_field :email, class: "form-control" %>		 
+	  </div>
+	  <%= error_tag @session, :email %>
+	</div>
+	  	     			  			    	     
+	 <div class="form-group">
+	 	 <%= f.label :password, class: "col-lg-2 control-label" %>
+	   <div class="col-lg-5">   
+	 		<%= f.password_field :password, class: "form-control" %>
+	   </div>
+	   <%= error_tag @session, :password %>
+	 </div>
+	 <div class="form-group"> 
+	 	<div class="col-lg-offset-2 col-lg-10">
+		 	<%= f.submit nil, class: 'btn btn-success' %>
+		</div>
+	 </div>
+<% end %>
+</div>

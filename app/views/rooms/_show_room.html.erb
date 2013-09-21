@@ -1,0 +1,29 @@
+<div class="col-xs-12 col-md-10 col-sm-10">
+<div class="thumbnail " style=" display: table; content: '';">
+
+  <div class="row">
+      <div class="col-sx-3 col-sm-3 col-md-3">
+        <%= link_to(image_tag(room.thumb_url), room.picture_url, class: 'thumbnail navbar-left ', style: 'display: table; content: "";') if room.has_picture? %>
+      </div>
+    <div class="col-xs-9 col-md-9 col-sm-9">
+
+    <div class="col-xs-9 col-md-9 col-sm-9">
+      <h2><%= link_to highlight(room.title, @search_query), room.route %></h2>
+
+         <%= t('.owner_html', owner: room.user.full_name, when: l(room.created_at, format: :short)) %>
+         <%= highlight(room.description, @search_query) %>
+
+    </div>
+    <div class="col-sx-3 col-md-3 col-sm-3">
+      <%= render 'review', room: room %>
+    </div>
+
+</div>
+</div>
+    </div>
+    </div>
+
+
+
+
+

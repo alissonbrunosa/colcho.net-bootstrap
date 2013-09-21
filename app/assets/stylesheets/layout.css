@@ -1,0 +1,23 @@
+.title-site {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+
+@media(min-width: 768px) {
+    .title-site {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .title-site {
+        font-size: 20px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+}

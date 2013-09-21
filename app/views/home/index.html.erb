@@ -1,0 +1,17 @@
+<p>
+	
+	<% unless notice.nil? %>
+		<div class="alert alert-success">
+			<%= t(notice) %>
+		</div>
+	<% end %>
+	
+	<h1><%= t('.subtitle') %></h1>
+
+	<ul>
+		<% @rooms.each do |room| %>
+			<li><%= link_to room.full_name, room %></li>
+		<% end %>
+	</ul>
+</p>
+

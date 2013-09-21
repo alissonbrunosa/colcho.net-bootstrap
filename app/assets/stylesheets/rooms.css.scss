@@ -1,0 +1,49 @@
+
+
+.review .star {
+	font-family: "FontAwesome";
+	font-size: 18px;
+}
+.review  .filled_star {
+	color: gold;
+	text-shadow: 1px 1px #999;
+	&:before { content: "\f005"; }
+}
+.review  .empty_star {
+	color: #aaa;
+	&:before { content: "\f006"; }
+}
+
+#content .review {
+	margin: 0;
+	padding: 0;
+	float: right;
+	border: none;
+	/* Adicione a seguinte linha: */
+	position: relative;
+}
+
+.review .icon-ok,
+.review .icon-remove {
+	right: 0;
+}
+
+.review label i {
+	font-size: 18px;
+	text-shadow: 1px 1px #999;
+	cursor:pointer;
+	color: #ccc;
+}
+.review label.toggled i {
+	color: gold;
+}
+
+.review form > input {
+	display:none;
+}
+
+.highlight {
+  font-size: inherit;
+  font-weight: inherit;
+  background-color: gold;
+}

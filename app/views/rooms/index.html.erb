@@ -1,0 +1,24 @@
+<div class="page-header">
+    <% if @search_query.present? %>
+        <h1><%= t('.result_query')%></h1>
+    <%else%>
+        <h1><%= t('.page_header') %> </h1>
+    <%end%>
+</div>
+<%= render 'search' %>
+<div class="row col-lg-12 col-md-12">
+    <%= render @rooms %>
+</div>
+<%= paginate @rooms %>
+
+<script type=text/javascript>
+    $(document).ready(function(){
+        var ul_element = $('.pagination > ul');
+        ul_element.addClass('pagination pagination-sm');
+    });
+
+
+
+</script>
+
+

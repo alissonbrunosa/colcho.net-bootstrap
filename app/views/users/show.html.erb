@@ -1,0 +1,31 @@
+<div class="well">
+  <span style="color: green " class = "navbar-right"><%= notice%></span>
+
+   <%if user_signed_in? %>
+    <%= link_to(image_tag(@user.photo.thumb.url), '#form_modal', class: 'img-thumbnail photo_profile', :'data-toggle' => "tooltip", :title => t('.click_to_changer_image'), :id => "modal" )  %>
+   <% else %>
+      <%= link_to(image_tag(@user.photo.thumb.url)) %>
+   <% end %>
+
+  <h1>  <%= t('.title', full_name: @user.full_name) %></h1>
+  
+  <p>
+    <b><%= t('.location') %>:</b>
+    <%= @user.location %>
+  </p>
+
+  <p>
+    <b><%= t('.bio') %>:</b>
+    <%= @user.bio %>
+  </p>
+
+  <% if no_user_signed_in? %>
+    <%= link_to t('.efetuar_login'), new_user_session_path, class: 'btn btn-success' %>
+  <%end%>
+  <%= link_to t('.home'), root_path, class: 'btn btn-info' %>
+  <%if user_signed_in? %>
+    <%= link_to t('.edit'), edit_user_path(@user), class: 'btn btn-warning' %>
+  <% end %>
+</div>
+
+<%= render 'form_image', user: @user %>

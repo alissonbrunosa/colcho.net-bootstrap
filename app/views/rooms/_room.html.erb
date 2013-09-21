@@ -1,0 +1,27 @@
+
+
+  <div class="col-sm-6 col-md-6">
+    <div class="thumbnail" style="min-height: 495px; margin-bottom: 30px">
+      <%= link_to(image_tag(room.thumb_url), room.picture_url, class: 'thumbnail') if room.has_picture? %>
+      <div class="caption">
+        <h3><%= link_to highlight(room.title, @search_query), room.route %></h3>
+        <p><%= render 'review', room: room %></p>
+        <p><%= t('.owner_html', owner: room.user.full_name, when: l(room.created_at, format: :short)) %></p>
+        <p><%= highlight(truncate(room.description,length: 250), @search_query) %> </p>
+        <p>
+          <% if belongs_to_user?(room) %>
+              <%= link_to t('.edit'), edit_room_path(room.route), class: 'btn btn-warning' %> </li>
+              <%= link_to t('.destroy'), room_path(room.route),
+                          method: :delete,
+                          data: {
+                                  confirm: t('dialogs.destroy')
+                          },
+                          class: 'btn btn-danger' %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+

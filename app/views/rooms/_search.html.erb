@@ -1,0 +1,7 @@
+<%= form_tag rooms_path, method: :get, class: 'form-inline' do %>
+    <div class="input-group" style="margin-bottom: 12px">
+        <span class="input-group-addon"><i class="icon-search"></i></span>
+        <%= text_field_tag :q, @search_query, placeholder: t('.search_for'), class: 'form-control   ' %>
+    </div>
+<% end %>
+

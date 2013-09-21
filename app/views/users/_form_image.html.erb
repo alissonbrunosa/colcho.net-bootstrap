@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#modal').click(function(){
+            $('#form_modal').modal("show");
+        })
+    })
+
+</script>
+
+
+<div class="modal fade" id="form_modal" tabindex="-1" role="dialog" aria-labelledby="title_form" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= t('.titleimgperfil')%></h4>
+      </div>
+      <%= form_for @user do |f|%>
+          <div class="modal-body">
+
+            <%= f.label :photo %>
+            <%= f.file_field :photo, class: "form-control" %>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.submit nil, class: "btn btn-primary" %>
+          </div>
+      <%end%>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
