@@ -54,5 +54,4 @@ class RoomPresenter
   def has_picture?
     @room.picture?
   end
-
 end
