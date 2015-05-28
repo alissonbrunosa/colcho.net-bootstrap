@@ -67,7 +67,7 @@ ColchonetBootstrap::Application.configure do
 
 
   config.action_mailer.default_url_options = {
-      :host => "floating-cove-3454.herokuapp.com"
+      :host => "evening-lowlands-1915.herokuapp.com"
   }
   config.action_mailer.smtp_settings = {
       :port => ENV['MAILGUN_SMTP_PORT'],
